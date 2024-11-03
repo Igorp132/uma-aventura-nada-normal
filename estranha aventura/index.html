@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+    <title>Um dia estranho</title>
+</head>
+<body>
+    </audio>
+    <audio id="click-sound" src="ronco.mp3"></audio>
+    <main>
+        <div class="passo ativo" id="passo-0">
+            <img src='barril.png' alt="">
+            <p>Você acorda dentro de um barril em um navio pirata. Por mais estranho que pareça, o barril é bem confortável. O que você irá fazer agora?</p>
+            <button class="btn-proximo" data-proximo="1">Sair do barril</button>
+            <button class="btn-proximo" data-proximo="2">Esperar até o navio atracar em algum lugar</button>
+        </div>
+        <div class="passo" id="passo-1">
+            <img src='koby.png' alt="">
+            <p>Você sai do barril e toma um susto, um garoto, sem marra alguma de pirata, está sentado ao lado. Você fala com ele e ele explica que ele é um escravizado da dona do navio.</p>
+            <button class="btn-proximo" data-proximo="3">Sair para o convés com o garoto</button>
+            <button class="btn-proximo" data-proximo="2">Esperar o navio atracar com o garoto</button>
+        </div>
+        <div class="passo" id="passo-2">
+            <img src='multidao.png' alt="">
+            <p>Você espera até o navio atracar em um porto, e se certifica de só sair quando não há ninguém por perto. Ao longe você vê uma multidão.</p>
+            <button class="btn-proximo" data-proximo="5">Verificar o motivo do alvoroço</button>
+            <button class="btn-proximo" data-proximo="6">Passar reto e ir para o bar</button>
+        </div>
+        <div class="passo" id="passo-6">
+            <img src='bar.png' alt="">
+            <p>Você decide passar reto e vai para o bar. Ao entrar você pede por comida e bebida, você desmaia e acorda como se fosse um dia qualquer. Sua vida acaba tranquilamente.</p>
+            <p><strong>Fim da aventura!</strong></p>
+            <button class="btn-proximo" data-proximo="0">Recomeçar a aventura</button>
+        </div>
+        <div class="passo" id="passo-3">
+            <img src='alvida.png' alt="">
+            <p>Você encontra a dona do navio junto de sua tripulação. Ela pergunta como você parou no navio dela e, percebendo que você não sabe, se mostra muito agressiva.</p>
+            <button class="btn-proximo" data-proximo="4">Correr e torcer pelo melhor junto com o garoto</button>
+            <button class="btn-proximo" data-proximo="5">Tentar dialogar com eles</button>
+        </div>
+        <div class="passo" id="passo-5">
+            <p>Você tenta dialogar com a dona do navio, mas suas palavras não têm efeito. Ela fica furiosa e, sem pensar duas vezes, manda seus piratas atacá-lo. Você não consegue escapar e é morto.</p>
+            <p><strong>Você morreu!</strong></p>
+            <button class="btn-proximo" data-proximo="0">Recomeçar a aventura</button>
+        </div>
+        <div class="passo" id="passo-4">
+            <img src='porto.png' alt="">
+            <p>Você decide correr, puxando o garoto junto com você. Por algum milagre, o navio chega ao porto e você consegue pular para fora e despistar a maléfica pirata.</p>
+            <button class="btn-proximo" data-proximo="6">Passar reto e ir para o bar</button>
+            <button class="btn-proximo" data-proximo="8">Verificar o motivo do alvoroço</button>
+        </div>
+        <div class="passo" id="passo-8">
+            <img src='multidao.png' alt="">
+            <p>Você se aproxima da multidão e percebe que todos estão agitados por conta de uma espada cravada no chão, onde ninguém que tenta removê-la tem sucesso.</p>
+            <button class="btn-proximo" data-proximo="7">Fazer a tentativa de puxar a espada do chão</button>
+            <button class="btn-proximo" data-proximo="9">Voltar e procurar um hotel para descansar</button>
+        </div>
+        <div class="passo" id="passo-7">
+            <img src='espada.png' alt="">
+            <p>Você se aproxima da espada cravada e faz uma força para puxá-la. Com um esforço surpreendente, a espada se solta do chão, e você a ergue triunfante. A multidão para e observa, admirada.</p>
+            <p>De repente, você sente uma onda de poder atravessar seu corpo. Você percebe que a espada tem uma magia antiga, e, ao segurá-la, você se torna o novo guardião do porto, um herói para os necessitados.</p>
+            <p><strong>Parabéns! Você encontrou um novo propósito e se tornou uma lenda entre os piratas!</strong></p>
+            <button class="btn-proximo" data-proximo="0">Recomeçar a aventura</button>
+        </div>
+        <div class="passo" id="passo-9">
+            <img src='preso.png' alt="">
+            <p>Você decide que o melhor a fazer é descansar. Ao encontrar um hotel próximo, você aluga um quarto e se joga na cama. O cansaço é imenso, e você adormece imediatamente.</p>
+            <p>Após uma longa noite de sono, você acorda preso, pois não possuía dinheiro para o quarto que você alugou.</p>
+            <p><strong>Fim da aventura!</strong></p>
+            <button class="btn-proximo" data-proximo="0">Recomeçar a aventura</button>
+        </div>
+        
+    </main>
+    <script src="script.js"></script>
+    <script>
+        const buttons = document.querySelectorAll('.btn-proximo');
+        const clickSound = document.getElementById('click-sound');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                clickSound.currentTime = 0; // Reinicia o som
+                clickSound.play(); // Toca o som
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+body {
+    background-color: #e4d39e;
+    color: rgb(73, 65, 47);
+    font-family: "Playwrite GB S", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    margin: 1;
+}
+button {
+    background-color: rgb(138, 125, 91);
+    color: rgb(255, 251, 214);
+     font-family: "Playwrite GB S", serif;
+} 
+
+.passo {
+    display: none;
+}
+
+.passo.ativo {
+    display:block;
+}
